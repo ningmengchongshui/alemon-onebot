@@ -14,7 +14,7 @@ import { OneBotLoginMap } from 'alemon-onebot'
 export default ALoginOptions<OneBotLoginMap>({
   test: {
     onebot: {
-      //
+      url: ''
     }
   }
 })
