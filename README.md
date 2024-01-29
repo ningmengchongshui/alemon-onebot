@@ -1,22 +1,23 @@
 ## Alemon-Onebot
 
+> AlemonJS V1.2.0-rc.20 以上
+
 ```sh
 npm i alemon-onebot
 ```
 
-`a.login.config.ts`
+`alemon.login.ts`
 
 ```ts
-import { LoginMap } from 'alemonjs'
+import { ALoginOptions } from 'alemonjs'
 import { OneBotLoginMap } from 'alemon-onebot'
-export const login: LoginMap & OneBotLoginMap = {
+export default ALoginOptions<OneBotLoginMap>({
   test: {
     onebot: {
-      url: '',
-      access_token: ''
+      //
     }
   }
-}
+})
 ```
 
 `alemon.config.ts`
@@ -24,9 +25,7 @@ export const login: LoginMap & OneBotLoginMap = {
 ```ts
 import { defineAlemonConfig, analysis } from 'alemonjs'
 import OneBot from 'alemon-onebot'
-import { login } from './a.login.config.js'
 export default defineAlemonConfig({
-  login: analysis(login),
   // onebot v12
   platforms: [OneBot]
 })
