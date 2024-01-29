@@ -10,6 +10,7 @@ import {
   type MessageBingdingOption,
   type AEvent
 } from 'alemonjs'
+import { BOTNAME } from '../../one.js'
 /**
  * 公信事件
  * @param socket
@@ -19,7 +20,7 @@ import {
 export function MESSAGES(event: EventGroup): AEvent {
   const masterID = config.get('masterID')
   const e = {
-    platform: 'one',
+    platform: BOTNAME,
     event: 'MESSAGES' as (typeof EventEnum)[number],
     typing: 'CREATE' as (typeof TypingEnum)[number],
     boundaries: 'publick' as 'publick' | 'private',
